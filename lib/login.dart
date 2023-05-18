@@ -1,3 +1,5 @@
+import 'package:student_app/data.dart';
+
 import 'home.dart';
 import 'package:flutter/material.dart';
 import 'dashboard';
@@ -28,7 +30,7 @@ class _MyLoginState extends State<MyLogin> {
             ),
           ),
           Container(
-            padding: const EdgeInsets.only(top: 200, left: 80),
+            padding: const EdgeInsets.only(top: 250, left: 90),
             child: const Text(
               "Welcome Back",
               textAlign: TextAlign.center,
@@ -39,7 +41,7 @@ class _MyLoginState extends State<MyLogin> {
             ),
           ),
           Container(
-            padding: const EdgeInsets.only(top: 240, left: 40),
+            padding: const EdgeInsets.only(top: 290, left: 50),
             child: const Text(
               "Log in to your account to continue",
               textAlign: TextAlign.center,
@@ -105,10 +107,15 @@ class _MyLoginState extends State<MyLogin> {
                       child: IconButton(
                           icon: const Icon(Icons.arrow_forward),
                           color: Colors.white,
+// onPressed: () {
+//   Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyApiPage()));
+// },
+
                           onPressed: () {
                             Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => HomeScreen()));
-                          }),
+                                builder: (context) => Home(title: 'homepage',)));
+                          }
+                          ),
                     ),
                   ],
                 ),

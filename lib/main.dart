@@ -5,9 +5,7 @@ void main() {
   runApp(
     MaterialApp(
         debugShowCheckedModeBanner: false,
-        initialRoute: 'login',
-        routes: {
-          'login': (context) => const MyLogin(),
-        }),
+      home: MyLogin(),
+       ),
   );
 }
