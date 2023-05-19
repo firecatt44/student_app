@@ -10,6 +10,8 @@ class RegistrationForm extends StatefulWidget {
 class _RegistrationFormState extends State<RegistrationForm> {
   final _formKey = GlobalKey<FormState>();
   TextEditingController _dateController = TextEditingController();
+  TextEditingController _plannedDateController = TextEditingController();
+
   String _genderValue = "-1";
   String _nationalityValue = "-1";
   String _programmeValue = "-1";
@@ -21,7 +23,8 @@ class _RegistrationFormState extends State<RegistrationForm> {
     super.dispose();
   }
 
-  void _selectDate(BuildContext context) async {
+  void _selectDate(
+      BuildContext context, TextEditingController controller) async {
     FocusScope.of(context).requestFocus(FocusNode());
 
     final selectedDate = await showDatePicker(
@@ -34,7 +37,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
     if (selectedDate != null) {
       setState(() {
         final formattedDate = DateFormat('dd-MM-yyyy').format(selectedDate);
-        _dateController.text = formattedDate;
+        controller.text = formattedDate;
       });
     }
   }
@@ -91,11 +94,8 @@ class _RegistrationFormState extends State<RegistrationForm> {
           child: ListView(
             children: [
               const SizedBox(height: 16.0),
-
               TextFormField(
-               
                 decoration: const InputDecoration(
-                  
                   border: OutlineInputBorder(),
                   labelText: 'Please enter student name.',
                   hintText: 'Student Name',
@@ -110,10 +110,8 @@ class _RegistrationFormState extends State<RegistrationForm> {
               ),
               const SizedBox(height: 16.0),
               buildDropdownFormField(
-                
                 value: _genderValue,
                 labelText: 'Please select student gender.',
-                
                 items: [
                   DropdownMenuItem(
                     child: Text(""),
@@ -185,11 +183,11 @@ class _RegistrationFormState extends State<RegistrationForm> {
                     return null;
                   }
                 },
-                onTap: () => _selectDate(context),
+                onTap: () => _selectDate(context, _dateController),
               ),
               const SizedBox(height: 16.0),
               buildTextField(
-                controller: _dateController,
+                controller: _plannedDateController,
                 labelText: 'Please select the planned start date',
                 hintText: 'Select Date',
                 icon: Icons.calendar_today_rounded,
@@ -200,7 +198,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
                     return null;
                   }
                 },
-                onTap: () => _selectDate(context),
+                onTap: () => _selectDate(context, _plannedDateController),
               ),
               const SizedBox(height: 16.0),
               buildDropdownFormField(
@@ -287,9 +285,8 @@ class _RegistrationFormState extends State<RegistrationForm> {
               ),
               const SizedBox(height: 16.0),
               ElevatedButton(
-                
-                style: ElevatedButton.styleFrom( minimumSize: Size(200, 50),
-                backgroundColor: Colors.indigo),
+                style: ElevatedButton.styleFrom(
+                    minimumSize: Size(200, 50), backgroundColor: Colors.indigo),
                 onPressed: () {
                   final isValidForm = _formKey.currentState!.validate();
                   if (isValidForm) {
@@ -302,7 +299,6 @@ class _RegistrationFormState extends State<RegistrationForm> {
                   }
                 },
                 child: const Text('Next'),
-            
               ),
             ],
           ),
