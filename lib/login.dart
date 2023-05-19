@@ -103,14 +103,13 @@ class _MyLoginState extends State<MyLogin> {
                     ),
                     CircleAvatar(
                       radius: 30,
-                      backgroundColor: const Color(0xff4c505b),
+                      backgroundColor: Color.fromARGB(255, 70, 78, 101),
                       child: IconButton(
                           icon: const Icon(Icons.arrow_forward),
                           color: Colors.white,
 // onPressed: () {
 //   Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyApiPage()));
 // },
-
                           onPressed: () {
                             Navigator.of(context).push(MaterialPageRoute(
                                 builder: (context) => Home(title: 'homepage',)));
