@@ -88,11 +88,14 @@ class _RegistrationFormState extends State<RegistrationForm> {
         child: Form(
           autovalidateMode: AutovalidateMode.onUserInteraction,
           key: _formKey,
-          child: Column(
+          child: ListView(
             children: [
               const SizedBox(height: 16.0),
+
               TextFormField(
+               
                 decoration: const InputDecoration(
+                  
                   border: OutlineInputBorder(),
                   labelText: 'Please enter student name.',
                   hintText: 'Student Name',
@@ -107,8 +110,10 @@ class _RegistrationFormState extends State<RegistrationForm> {
               ),
               const SizedBox(height: 16.0),
               buildDropdownFormField(
+                
                 value: _genderValue,
                 labelText: 'Please select student gender.',
+                
                 items: [
                   DropdownMenuItem(
                     child: Text(""),
@@ -228,6 +233,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
                   });
                 },
               ),
+              SizedBox(height: 20),
               buildDropdownFormField(
                 value: _levelValue,
                 labelText: 'Please select level.',
@@ -281,6 +287,9 @@ class _RegistrationFormState extends State<RegistrationForm> {
               ),
               const SizedBox(height: 16.0),
               ElevatedButton(
+                
+                style: ElevatedButton.styleFrom( minimumSize: Size(200, 50),
+                backgroundColor: Colors.indigo),
                 onPressed: () {
                   final isValidForm = _formKey.currentState!.validate();
                   if (isValidForm) {
@@ -293,6 +302,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
                   }
                 },
                 child: const Text('Next'),
+            
               ),
             ],
           ),
@@ -305,7 +315,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
     return AppBar(
       title: const Text('Student Registration'),
       elevation: 0,
-      backgroundColor: const Color.fromARGB(255, 184, 166, 63),
+      backgroundColor: Colors.indigo,
       actions: const <Widget>[],
     );
   }
