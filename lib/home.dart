@@ -1,3 +1,5 @@
+import 'package:student_app/registrationform.dart';
+
 import 'login.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -85,6 +87,9 @@ class _HomeState extends State<Home> {
               style: ElevatedButton.styleFrom(fixedSize: const Size(360, 70),
               backgroundColor: Colors.indigo),
               onPressed: () {
+                 Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => RegistrationForm()));
+                // login screen
               },
               icon: Icon(
                 Icons.paste_outlined,
