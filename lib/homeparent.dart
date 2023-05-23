@@ -31,65 +31,65 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) => Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-      elevation: 0,
-      backgroundColor: Colors.transparent,
-          actions: <Widget>[
-            IconButton(
-              icon: const FaIcon(FontAwesomeIcons.house, color: Colors.indigo),
-              onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => Home(
-                          title: 'Homepage',
-                        )));
-              },
-            ),
-            SizedBox(
-              width: 300,
-            ),
-      
-            IconButton(
-              icon: const FaIcon(FontAwesomeIcons.rightFromBracket, color:Colors.indigo),
-              onPressed: () {
-                Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => MyLogin()));
-                // login screen
-              },
-            ),
-          ]),
+      appBar:  buildAppBar(),
+    
       body: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/home.jpg"),
+            image: AssetImage("assets/images/home.jpeg"),
             fit: BoxFit.cover,
           )),
           
           child: Column(children: [
-        SizedBox(
-          height: 100,
-        ),
+        
         Container(
           width: double.infinity,
   decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/home.jpg"),
+            image: AssetImage("assets/images/home.jpeg"),
             fit: BoxFit.cover,
           ),
         ),
         ),
+ Container(
+  height: 42.0,
+  width: double.infinity,
+  color: Color.fromARGB(255, 27, 108, 175),
+  
+),         
         Column(      
-          
-            mainAxisAlignment: MainAxisAlignment.center,
-     crossAxisAlignment: CrossAxisAlignment.center,   
+          // mainAxisAlignment: MainAxisAlignment.center,
+     crossAxisAlignment: CrossAxisAlignment.start,   
           children: <Widget>[
+//             const SizedBox(
+//   width: 42.0,
+//   height: 42.0,
+//   child: const DecoratedBox(
+//     decoration: const BoxDecoration(
+//       color: Colors.red
+//     ),
+//   ),
+  
+// ),
+// new Container(
+
+//   height: 42.0,
+//   width: 42.0,
+//   color: Colors.red,
+// ),
+      //  const Text('Hello Parent!', textAlign: TextAlign.left
+      //       , style: TextStyle(fontSize:27, color: Colors.indigo , fontWeight: FontWeight.bold),),
+           SizedBox(height: 10,),
+       
+        
+            SizedBox(height: 100,),
             ElevatedButton.icon(
               style: ElevatedButton.styleFrom(fixedSize: const Size(360, 70),
-              backgroundColor: Colors.indigo),
+              backgroundColor: Color.fromARGB(255, 45, 143, 200)),
               onPressed: () {
                  Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => RegistrationForm()));
-                // login screen
+            
               },
               icon: Icon(
                 Icons.paste_outlined,
@@ -105,7 +105,7 @@ class _HomeState extends State<Home> {
             
             ElevatedButton.icon(
               style: ElevatedButton.styleFrom(fixedSize: const Size(360, 70),
-              backgroundColor: Colors.indigo),
+              backgroundColor: Color.fromARGB(255, 45, 143, 200)),
               
               onPressed: () {
               },
@@ -119,7 +119,7 @@ class _HomeState extends State<Home> {
             ),
             ElevatedButton.icon(
               style: ElevatedButton.styleFrom(fixedSize: const Size(360, 70),
-              backgroundColor: Colors.indigo),
+              backgroundColor: Color.fromARGB(255, 45, 143, 200)),
               onPressed: () {
               },
               icon: Icon(
@@ -133,7 +133,7 @@ class _HomeState extends State<Home> {
             ),
             ElevatedButton.icon(
               style: ElevatedButton.styleFrom(fixedSize: const Size(360, 70),
-              backgroundColor: Colors.indigo),
+              backgroundColor: Color.fromARGB(255, 45, 143, 200)),
               onPressed: () {
               },
               icon: Icon(
@@ -147,5 +147,39 @@ class _HomeState extends State<Home> {
 
       ]))
       );
+
+AppBar buildAppBar() {
+  return 
+      AppBar(
+         toolbarHeight: 80,
+        centerTitle: false,
+        automaticallyImplyLeading: false,
+        elevation: 0,
+       title: Text('Home',
+       
+       style: TextStyle( fontSize: 22)),
+       leading: IconButton(
+    onPressed: () { Navigator.of(context).push(MaterialPageRoute(
+                     builder: (context) => Home(
+                           title: 'Homepage',
+                        )));},
+    icon: const FaIcon(FontAwesomeIcons.house),
+  ),
+         backgroundColor: Color.fromARGB(255, 27, 108, 175),
+          actions: <Widget>[
+          
+      
+            IconButton(
+              icon: const FaIcon(FontAwesomeIcons.rightFromBracket),
+              onPressed: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => MyLogin()));
+                // login screen
+              },
+            ),
+          ]);
+  
+}
+
 }
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'home.dart';
+import 'homeparent.dart';
 
 class RegistrationForm extends StatefulWidget {
   @override
@@ -309,9 +309,9 @@ class _RegistrationFormState extends State<RegistrationForm> {
 
   AppBar buildAppBar() {
     return AppBar(
-      title: const Text('Student Registration'),
+      title: const Text('Student Admission'),
       elevation: 0,
-      backgroundColor: Colors.indigo,
+      backgroundColor: Color.fromARGB(255, 46, 54, 97),
       actions: const <Widget>[],
     );
   }

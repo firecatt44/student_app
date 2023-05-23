@@ -1,6 +1,6 @@
 import 'package:student_app/data.dart';
-
-import 'home.dart';
+import 'hometeacher.dart';
+import 'homeparent.dart';
 import 'package:flutter/material.dart';
 import 'dashboard';
 
@@ -36,7 +36,7 @@ class _MyLoginState extends State<MyLogin> {
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 33,
+                fontSize: 33, fontWeight: FontWeight.bold
               ),
             ),
           ),
@@ -46,7 +46,7 @@ class _MyLoginState extends State<MyLogin> {
               "Log in to your account to continue",
               textAlign: TextAlign.center,
               style: TextStyle(
-                color: Colors.grey,
+                color: Color.fromARGB(255, 120, 117, 117),
                 fontSize: 20,
               ),
             ),
@@ -107,13 +107,12 @@ class _MyLoginState extends State<MyLogin> {
                       child: IconButton(
                           icon: const Icon(Icons.arrow_forward),
                           color: Colors.white,
-// onPressed: () {
-//   Navigator.of(context).push(MaterialPageRoute(builder: (context) => MyApiPage()));
-// },
-                          onPressed: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => Home(title: 'homepage',)));
-                          }
+                    // onPressed: () {
+                    //   Navigator.of(context).push(MaterialPageRoute(builder: (context) => Home2()));
+                    // },
+                   onPressed: () {
+                     Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => Home(title: 'homepage',)));}
                           ),
                     ),
                   ],
