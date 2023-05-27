@@ -1,5 +1,5 @@
+import 'package:student_app/mychild/profile.dart';
 import 'package:student_app/registrationform.dart';
-
 import 'login.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -55,7 +55,7 @@ class _HomeState extends State<Home> {
   height: 42.0,
   width: double.infinity,
   color: Color.fromARGB(255, 27, 108, 175),
-  
+  child: Text('Hello Parent!'),
 ),         
         Column(      
           // mainAxisAlignment: MainAxisAlignment.center,
@@ -108,6 +108,8 @@ class _HomeState extends State<Home> {
               backgroundColor: Color.fromARGB(255, 45, 143, 200)),
               
               onPressed: () {
+                 Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => Profile()));
               },
               icon: const FaIcon(FontAwesomeIcons.person,
                 size: 30.0,
