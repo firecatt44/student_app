@@ -2,7 +2,6 @@ import 'package:student_app/data.dart';
 import 'hometeacher.dart';
 import 'homeparent.dart';
 import 'package:flutter/material.dart';
-import 'dashboard';
 
 class MyLogin extends StatefulWidget {
   const MyLogin({Key? key}) : super(key: key);
@@ -90,7 +89,7 @@ class _MyLoginState extends State<MyLogin> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        HeaderWithSearchBox;
+                        // HeaderWithSearchBox;
                       },
                       child: const Text(
                         'Forgot Password',

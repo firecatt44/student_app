@@ -55,7 +55,13 @@ class _HomeState extends State<Home> {
   height: 42.0,
   width: double.infinity,
   color: Color.fromARGB(255, 27, 108, 175),
-  child: Text('Hello Parent!'),
+  child: Align(
+alignment: Alignment(-0.9,-0.5),
+     child: Text('Hello Parent!', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold,
+  color: Colors.white),
+  ),
+  )
+  
 ),         
         Column(      
           // mainAxisAlignment: MainAxisAlignment.center,
@@ -109,7 +115,7 @@ class _HomeState extends State<Home> {
               
               onPressed: () {
                  Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => Profile()));
+                    MaterialPageRoute(builder: (context) => AdminPage()));
               },
               icon: const FaIcon(FontAwesomeIcons.person,
                 size: 30.0,
@@ -125,7 +131,7 @@ class _HomeState extends State<Home> {
               onPressed: () {
               },
               icon: Icon(
-                Icons.done,
+                Icons.view_day_sharp,
                 size: 30.0,
               ),
               label: Text('-', style: TextStyle(fontSize: 22)),
@@ -139,7 +145,7 @@ class _HomeState extends State<Home> {
               onPressed: () {
               },
               icon: Icon(
-                Icons.done,
+                Icons.view_day_sharp,
                 size: 30.0,
               ),
               label: Text('-', style: TextStyle(fontSize: 22)),
