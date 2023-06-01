@@ -3,6 +3,7 @@ class User {
   String name;
   String email;
   String phone;
+  String aboutMeDescription;
 
   // Constructor
   User({
@@ -10,32 +11,37 @@ class User {
     required this.name,
     required this.email,
     required this.phone,
+    required this.aboutMeDescription,
   });
 
   User copy({
-    String? image,
+    String? imagePath,
     String? name,
     String? phone,
     String? email,
+    String? about,
   }) =>
       User(
-        image: image ?? this.image,
+        image: imagePath ?? this.image,
         name: name ?? this.name,
         email: email ?? this.email,
         phone: phone ?? this.phone,
+        aboutMeDescription: about ?? this.aboutMeDescription,
       );
 
   static User fromJson(Map<String, dynamic> json) => User(
-    image: json['image'],
+        image: json['imagePath'],
         name: json['name'],
         email: json['email'],
+        aboutMeDescription: json['about'],
         phone: json['phone'],
       );
 
   Map<String, dynamic> toJson() => {
-    'image': image,
+        'imagePath': image,
         'name': name,
         'email': email,
+        'about': aboutMeDescription,
         'phone': phone,
       };
 }

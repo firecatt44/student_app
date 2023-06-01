@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'userdata.dart';
 import 'package:email_validator/email_validator.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 // This class handles the Page to edit the Email Section of the User Profile.
 class EditEmailFormPage extends StatefulWidget {
@@ -30,7 +31,7 @@ class EditEmailFormPageState extends State<EditEmailFormPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: buildAppBar(context),
+        appBar: buildAppBar(),
         body: Form(
           key: _formKey,
           child: Column(
@@ -88,15 +89,17 @@ class EditEmailFormPageState extends State<EditEmailFormPage> {
               ]),
         ));
   }
-
-AppBar buildAppBar(BuildContext context) {
-  return AppBar(
-    iconTheme: IconThemeData(
-        color: Colors
-            .black), // set backbutton color here which will reflect in all screens.
-    leading: BackButton(),
-    backgroundColor: Colors.transparent,
-    elevation: 0,
+  AppBar buildAppBar() {
+  return 
+      AppBar(
+         toolbarHeight: 80,
+        centerTitle: false,
+        elevation: 0,   
+       title: const Text('',   
+       style: TextStyle(color: Colors.white, fontSize: 22)),
+         backgroundColor: Color.fromARGB(255, 172, 157, 19),
+          actions: <Widget>[
+          ]
   );
 }
 }

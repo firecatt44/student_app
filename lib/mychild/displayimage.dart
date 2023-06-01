@@ -1,15 +1,15 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 
 class DisplayImage extends StatelessWidget {
   final String imagePath;
- 
+  final VoidCallback onPressed;
 
   // Constructor
   const DisplayImage({
     Key? key,
     required this.imagePath,
+    required this.onPressed,
   }) : super(key: key);
 
   @override
@@ -19,13 +19,17 @@ class DisplayImage extends StatelessWidget {
     return Center(
         child: Stack(children: [
       buildImage(color),
-     
+      Positioned(
+        child: buildEditIcon(color),
+        right: 4,
+        top: 10,
+      )
     ]));
   }
 
   // Builds Profile Image
   Widget buildImage(Color color) {
-    final image = imagePath.contains('person.png')
+    final image = imagePath.contains('https://')
         ? NetworkImage(imagePath)
         : FileImage(File(imagePath));
 
@@ -38,6 +42,15 @@ class DisplayImage extends StatelessWidget {
       ),
     );
   }
+
+  // Builds Edit Icon on Profile Picture
+  Widget buildEditIcon(Color color) => buildCircle(
+      all: 8,
+      child: Icon(
+        Icons.edit,
+        color: color,
+        size: 20,
+      ));
 
   // Builds/Makes Circle for Edit Icon on Profile Picture
   Widget buildCircle({

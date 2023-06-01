@@ -1,3 +1,4 @@
+import 'package:student_app/mychild/mainprofile.dart';
 import 'package:student_app/mychild/profile.dart';
 import 'package:student_app/registrationform.dart';
 import 'login.dart';
@@ -54,44 +55,28 @@ class _HomeState extends State<Home> {
  Container(
   height: 42.0,
   width: double.infinity,
-  color: Color.fromARGB(255, 27, 108, 175),
+  color: Color.fromARGB(255, 46, 54, 97),
   child: Align(
-alignment: Alignment(-0.9,-0.5),
+alignment: Alignment(-0.8,-0.5),
      child: Text('Hello Parent!', style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold,
   color: Colors.white),
   ),
   )
   
 ),         
-        Column(      
+        Column(    
+            
           // mainAxisAlignment: MainAxisAlignment.center,
      crossAxisAlignment: CrossAxisAlignment.start,   
           children: <Widget>[
-//             const SizedBox(
-//   width: 42.0,
-//   height: 42.0,
-//   child: const DecoratedBox(
-//     decoration: const BoxDecoration(
-//       color: Colors.red
-//     ),
-//   ),
-  
-// ),
-// new Container(
 
-//   height: 42.0,
-//   width: 42.0,
-//   color: Colors.red,
-// ),
-      //  const Text('Hello Parent!', textAlign: TextAlign.left
-      //       , style: TextStyle(fontSize:27, color: Colors.indigo , fontWeight: FontWeight.bold),),
            SizedBox(height: 10,),
        
         
             SizedBox(height: 100,),
             ElevatedButton.icon(
               style: ElevatedButton.styleFrom(fixedSize: const Size(360, 70),
-              backgroundColor: Color.fromARGB(255, 45, 143, 200)),
+              backgroundColor: Color.fromARGB(255, 71, 82, 147)),
               onPressed: () {
                  Navigator.of(context).push(
                     MaterialPageRoute(builder: (context) => RegistrationForm()));
@@ -111,11 +96,11 @@ alignment: Alignment(-0.9,-0.5),
             
             ElevatedButton.icon(
               style: ElevatedButton.styleFrom(fixedSize: const Size(360, 70),
-              backgroundColor: Color.fromARGB(255, 45, 143, 200)),
+              backgroundColor: Color.fromARGB(255, 71, 82, 147)),
               
               onPressed: () {
                  Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => AdminPage()));
+                    MaterialPageRoute(builder: (context) => ProfilePage()));
               },
               icon: const FaIcon(FontAwesomeIcons.person,
                 size: 30.0,
@@ -127,7 +112,7 @@ alignment: Alignment(-0.9,-0.5),
             ),
             ElevatedButton.icon(
               style: ElevatedButton.styleFrom(fixedSize: const Size(360, 70),
-              backgroundColor: Color.fromARGB(255, 45, 143, 200)),
+              backgroundColor: Color.fromARGB(255, 71, 82, 147)),
               onPressed: () {
               },
               icon: Icon(
@@ -141,7 +126,7 @@ alignment: Alignment(-0.9,-0.5),
             ),
             ElevatedButton.icon(
               style: ElevatedButton.styleFrom(fixedSize: const Size(360, 70),
-              backgroundColor: Color.fromARGB(255, 45, 143, 200)),
+              backgroundColor: Color.fromARGB(255, 71, 82, 147)),
               onPressed: () {
               },
               icon: Icon(
@@ -173,7 +158,7 @@ AppBar buildAppBar() {
                         )));},
     icon: const FaIcon(FontAwesomeIcons.house),
   ),
-         backgroundColor: Color.fromARGB(255, 27, 108, 175),
+         backgroundColor: Color.fromARGB(255, 46, 54, 97),
           actions: <Widget>[
           
       

@@ -1,5 +1,4 @@
 import 'package:student_app/data.dart';
-import 'hometeacher.dart';
 import 'homeparent.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +15,7 @@ class _MyLoginState extends State<MyLogin> {
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
-            image: AssetImage('assets/images/login.png'), fit: BoxFit.cover),
+            image: AssetImage('assets/images/loginteacher.png'), fit: BoxFit.cover),
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,

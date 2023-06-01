@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:student_app/mychild/displayimage.dart';
-import 'editemail';
-import 'editname';
-import 'editphone';
+import 'editemail.dart';
+import 'editname.dart';
+import 'editphone.dart';
 import 'user.dart';
 import 'userdata.dart';
 // This class handles the Page to dispaly the user's info on the "Edit Profile" Screen
@@ -21,12 +21,9 @@ class _ProfilePageState extends State<ProfilePage> {
       body: Column(
         children: [
           AppBar(
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-            toolbarHeight: 10,
-                iconTheme: IconThemeData(
-        color: Colors
-            .black),
+      title: const Text('My child'),
+      elevation: 0,
+      backgroundColor: Color.fromARGB(255, 46, 54, 97),
           ),
           Center(
               child: Padding(
@@ -39,7 +36,7 @@ class _ProfilePageState extends State<ProfilePage> {
                       color: Color.fromRGBO(64, 105, 225, 1),
                     ),
                   ))),
-        DisplayImage(imagePath: user.image),
+        DisplayImage(imagePath: user.image, onPressed: () { DisplayImage; },),
           buildUserInfoDisplay(user.name, 'Name', EditNameFormPage()),
           buildUserInfoDisplay(user.phone, 'Phone', EditPhoneFormPage()),
           buildUserInfoDisplay(user.email, 'Email', EditEmailFormPage()),

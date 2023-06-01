@@ -1,4 +1,4 @@
-import 'login.dart';
+import '../login.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -131,29 +131,10 @@ class _Home2State extends State<Home2> {
 AppBar buildAppBar() {
   return 
       AppBar(
-        // leading: IconButton( onPressed:() { Navigator.of(context).push(MaterialPageRoute(
-        //   builder: (context) => const Home2(  )));},
-          // icon: const FaIcon(FontAwesomeIcons.house),) ,
          toolbarHeight: 80,
         centerTitle: false,
         automaticallyImplyLeading: false,
         elevation: 0,
-       
-        // title: Column(       
-        //      children: <Widget>[
-        //         Text( 'Home',
-        //         style: TextStyle(fontSize: 22), ),
-        //         SizedBox(height: 20),
-        //       Text("Hello Teacher!", style: TextStyle(fontSize: 27),),
-        //       IconButton(
-        //         icon: const FaIcon(FontAwesomeIcons.rightFromBracket),
-        //          onPressed: () {
-        //           Navigator.of(context).push(
-        //              MaterialPageRoute(builder: (context) => MyLogin()));
-        //          }
-        //       )
-        //     ]
-        //    )
         
        title: const Text('Home',   
        style: TextStyle(color: Colors.white, fontSize: 22)),

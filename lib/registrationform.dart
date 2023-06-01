@@ -286,7 +286,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
               const SizedBox(height: 16.0),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                    minimumSize: Size(200, 50), backgroundColor: Colors.indigo),
+                    minimumSize: Size(200, 50), backgroundColor: Color.fromARGB(255, 71, 82, 147)),
                 onPressed: () {
                   final isValidForm = _formKey.currentState!.validate();
                   if (isValidForm) {

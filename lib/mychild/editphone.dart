@@ -35,7 +35,7 @@ class EditPhoneFormPageState extends State<EditPhoneFormPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: buildAppBar(context),
+        appBar: buildAppBar(),
         body: Form(
           key: _formKey,
           child: Column(
@@ -96,14 +96,17 @@ class EditPhoneFormPageState extends State<EditPhoneFormPage> {
               ]),
         ));
   }
-  AppBar buildAppBar(BuildContext context) {
-  return AppBar(
-    iconTheme: IconThemeData(
-        color: Colors
-            .black), // set backbutton color here which will reflect in all screens.
-    leading: BackButton(),
-    backgroundColor: Colors.transparent,
-    elevation: 0,
+    AppBar buildAppBar() {
+  return 
+      AppBar(
+         toolbarHeight: 80,
+        centerTitle: false,
+        elevation: 0,   
+       title: const Text('',   
+       style: TextStyle(color: Colors.white, fontSize: 22)),
+         backgroundColor: Color.fromARGB(255, 172, 157, 19),
+          actions: <Widget>[
+          ]
   );
 }
 }
