@@ -1,3 +1,4 @@
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:student_app/data.dart';
 import 'homeparent.dart';
 import 'package:flutter/material.dart';
@@ -118,9 +119,35 @@ class _MyLoginState extends State<MyLogin> {
                 const SizedBox(
                   height: 40,
                 ),
-              ]),
+                Container(
+                  child:FloatingActionButton.extended(
+            onPressed: () {
+              GoogleSignIn().signIn();
+            },
+          icon: Image.asset(
+            'assets/images/google.png',
+            height: 32,
+            width: 32,
+          ),
+          label: Text('Sign in with Google'),
+          backgroundColor: Colors.white,
+          foregroundColor: Colors.black, )
+                ),
+              ]),      
             ),
           ),
+          // Container(
+          //   child:FloatingActionButton.extended(
+          //   onPressed: () {},
+          // icon: Image.asset(
+          //   'assets/images/google.png',
+          //   height: 32,
+          //   width: 32,
+          // ),
+          // label: Text('Sign in with Google'),
+          // backgroundColor: Colors.white,
+          // foregroundColor: Colors.black, )
+          // ),    
         ]),
       ),
     );
