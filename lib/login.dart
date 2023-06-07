@@ -1,16 +1,18 @@
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:student_app/data.dart';
+import 'package:student_app/logincontroller.dart';
 import 'homeparent.dart';
 import 'package:flutter/material.dart';
 
 class MyLogin extends StatefulWidget {
   const MyLogin({Key? key}) : super(key: key);
-
+ 
   @override
   _MyLoginState createState() => _MyLoginState();
 }
 
 class _MyLoginState extends State<MyLogin> {
+  final controller = Get.put (LoginController());
   @override
   Widget build(BuildContext context) {
     return Container(
